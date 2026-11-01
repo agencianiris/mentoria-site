@@ -65,6 +65,10 @@ section{padding-block:clamp(80px, 10vw, 128px)}
 .foto{position:relative;margin:0;width:100%;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(46,58,107,.4)}
 .foto svg{display:block;width:100%;height:100%}
 .foto-real img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.foto-dupla img{object-position:50% 40%}
+.foto-dupla .nome{position:absolute;bottom:12px;padding:4px 11px;border-radius:999px;background:rgba(250,247,242,.88);font-size:12px;line-height:1.4;color:var(--tinta-2)}
+.foto-dupla .n1{left:12px}
+.foto-dupla .n2{left:calc(50% + 12px)}
 .foto figcaption{position:absolute;left:14px;bottom:14px;padding:5px 12px;border-radius:999px;background:rgba(250,247,242,.88);font-size:12px;color:var(--tinta-2)}
 
 /* Abertura */
@@ -142,7 +146,7 @@ section{padding-block:clamp(80px, 10vw, 128px)}
 .prova .lead{color:#D0D3E5}
 .prova-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px, 6vw, 80px);align-items:center;margin-top:64px}
 .prova-grid > *{min-width:0}
-.prova .foto{aspect-ratio:5/4;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.prova .foto{aspect-ratio:8/5;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
 .numeros{display:flex;flex-direction:column}
 .numero{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:center;padding-block:22px;border-bottom:1px solid rgba(185,169,214,.25);min-width:0}
 .numero:first-child{padding-top:0}
@@ -500,30 +504,8 @@ footer b{color:var(--papel);font-weight:500}
       <p class="lead">A Tais não começou pronta. Ela passou por cada etapa que você vai atravessar na mentoria, e eu estive ao lado dela em todas.</p>
     </div>
     <div class="prova-grid">
-      <figure class="foto">
-        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Foto ilustrativa de uma gravação do podcast Alma de Coruja">
-          <defs>
-            <linearGradient id="t-fundo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3D4A80"/><stop offset="1" stop-color="#252E58"/></linearGradient>
-            <radialGradient id="t-luz" cx=".5" cy=".2" r=".7"><stop offset="0" stop-color="#E2CC97" stop-opacity=".45"/><stop offset="1" stop-color="#E2CC97" stop-opacity="0"/></radialGradient>
-            <filter id="t-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="12"/></filter>
-            <filter id="t-suave" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.3"/></filter>
-          </defs>
-          <rect width="500" height="400" fill="url(#t-fundo)"/>
-          <g filter="url(#t-blur)" opacity=".7"><circle cx="90" cy="90" r="30" fill="#E2CC97"/><circle cx="410" cy="80" r="24" fill="#B9A9D6"/><rect x="190" y="40" width="120" height="80" rx="40" fill="#E2CC97" opacity=".5"/></g>
-          <rect width="500" height="400" fill="url(#t-luz)"/>
-          <rect x="0" y="300" width="500" height="100" fill="#1E2547"/>
-          <g filter="url(#t-suave)">
-            <path d="M20 310 C24 240 62 206 120 202 C178 206 216 240 220 310 Z" fill="#B9A9D6"/>
-            <ellipse cx="120" cy="150" rx="40" ry="50" fill="#C7B9DF"/>
-            <path d="M74 150 C70 100 96 90 120 90 C150 90 172 104 168 160 C176 196 166 222 154 232 C158 200 156 170 146 140 C130 128 104 130 90 150 C86 180 88 214 90 236 C70 218 68 182 74 150 Z" fill="#8E7BB0"/>
-            <path d="M280 310 C284 240 322 206 380 202 C438 206 476 240 480 310 Z" fill="#E2CC97"/>
-            <ellipse cx="380" cy="150" rx="40" ry="50" fill="#EAD9AE"/>
-            <path d="M342 140 C344 110 362 98 382 98 C406 98 420 112 418 142 C410 124 398 118 380 118 C364 118 350 124 342 140 Z" fill="#B8964E"/>
-          </g>
-          <g fill="#0F1430"><rect x="176" y="232" width="14" height="40" rx="7"/><rect x="181" y="272" width="4" height="34"/><rect x="310" y="232" width="14" height="40" rx="7"/><rect x="315" y="272" width="4" height="34"/></g>
-          <rect x="226" y="286" width="48" height="20" rx="4" fill="#B8964E" opacity=".9"/>
-        </svg>
-        <figcaption>Foto ilustrativa</figcaption>
+      <figure class="foto foto-real foto-dupla"><img src="img/tais-e-leandro.jpg" width="960" height="600" loading="lazy" decoding="async" alt="Tais Joia e Leandro Garcia">
+        <figcaption class="nome n1">Tais Joia</figcaption><span class="nome n2" aria-hidden="true">Leandro Garcia</span>
       </figure>
       <div class="numeros">
         <div class="numero"><b>R$ 1 mi+</b><span>em vendas na Kiwify, somando atendimentos, livros e curso</span></div>

@@ -33,7 +33,7 @@
   --texto:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   color-scheme:light;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 *{box-sizing:border-box}
 body{background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -72,7 +72,34 @@ section{padding-block:clamp(80px, 10vw, 128px)}
 .foto figcaption{position:absolute;left:14px;bottom:14px;padding:5px 12px;border-radius:999px;background:rgba(250,247,242,.88);font-size:12px;color:var(--tinta-2)}
 
 /* Abertura */
-.hero{background:var(--areia);padding-block:clamp(56px, 8vw, 104px)}
+.hero{background:var(--areia);padding-block:calc(72px + clamp(40px, 6vw, 88px)) clamp(56px, 8vw, 104px)}
+
+/* Menu fixo */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;height:72px;background:rgba(243,237,228,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:background .25s,border-color .25s,box-shadow .25s}
+.topbar.rolou{background:rgba(250,247,242,.95);border-bottom-color:var(--linha);box-shadow:0 10px 30px -24px rgba(46,58,107,.5)}
+.topbar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.marca{display:flex;flex-direction:column;line-height:1.05;text-decoration:none}
+.marca b{font-family:var(--display);font-weight:500;font-size:23px;color:var(--indigo);letter-spacing:-.01em}
+.marca span{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ouro);margin-top:4px}
+.menu{display:flex;align-items:center;gap:28px}
+.menu a{text-decoration:none;font-size:15px;font-weight:500;color:var(--tinta);transition:color .2s}
+.menu a:hover{color:var(--indigo)}
+.menu .btn{padding:11px 20px;font-size:14.5px;color:var(--papel)}
+.menu .btn:hover{color:var(--papel)}
+.menu .btn svg{width:18px;height:18px}
+.abre-menu{display:none;width:44px;height:44px;border:0;background:none;color:var(--indigo);cursor:pointer;align-items:center;justify-content:center}
+.abre-menu svg{width:26px;height:26px}
+@media (max-width:960px){
+  .topbar{height:64px}
+  html{scroll-padding-top:64px}
+  .hero{padding-top:calc(64px + 36px)}
+  .marca b{font-size:21px}
+  .abre-menu{display:flex}
+  .menu{position:fixed;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 22px;background:var(--papel);border-bottom:1px solid var(--linha);box-shadow:0 24px 40px -24px rgba(46,58,107,.35);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .2s,transform .2s}
+  .menu.aberto{opacity:1;transform:none;pointer-events:auto}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--linha);font-size:16px}
+  .menu .btn{margin-top:16px;justify-content:center;border-bottom:0;padding:15px 20px;font-size:15.5px;width:100%}
+}
 .hero-grid{display:grid;grid-template-columns:1.3fr .85fr;gap:clamp(36px, 7vw, 96px);align-items:center}
 .hero-grid > *{min-width:0}
 .hero h1{font-size:clamp(38px, 5.4vw, 64px);margin-top:22px;letter-spacing:-.018em}
@@ -299,6 +326,21 @@ footer b{color:var(--papel);font-weight:500}
 </style>
 </head>
 <body>
+<nav class="topbar" id="topbar" aria-label="Menu principal">
+  <div class="wrap">
+    <a class="marca" href="#topo"><b>Leandro Garcia</b><span>Mentoria para terapeutas</span></a>
+    <div class="menu" id="menu">
+      <a href="#para-voce">Para você</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#perguntas">Perguntas</a>
+      <a class="btn btn-indigo" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Leandro!%20Vim%20pela%20p%C3%A1gina%20da%20mentoria%20e%20quero%20entender%20se%20ela%20faz%20sentido%20para%20o%20meu%20momento." target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><use href="#i-zap"/></svg>Quero conversar</a>
+    </div>
+    <button class="abre-menu" id="abre-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</nav>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-broto" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4-3-6.5-7.5-6.5 0 4.2 3 6.5 7.5 6.5Z"/><path d="M12 10c0-3.2 2.4-5.5 6.5-5.5 0 3.6-2.4 5.5-6.5 5.5Z"/><path d="M8 21h8"/></symbol>
@@ -748,6 +790,18 @@ document.querySelectorAll('.cal').forEach(function(cal){
   }
   cal.innerHTML = html;
 });
+</script>
+<script>
+(function(){
+  var barra=document.getElementById('topbar'), menu=document.getElementById('menu'), botao=document.getElementById('abre-menu');
+  function rolar(){ barra.classList.toggle('rolou', window.scrollY>10); }
+  window.addEventListener('scroll', rolar, {passive:true}); rolar();
+  botao.addEventListener('click', function(){
+    var aberto=menu.classList.toggle('aberto');
+    botao.setAttribute('aria-expanded', aberto?'true':'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.remove('aberto'); botao.setAttribute('aria-expanded','false'); }); });
+})();
 </script>
 </body>
 </html>

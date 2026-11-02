@@ -258,8 +258,10 @@ section{padding-block:clamp(80px, 10vw, 128px)}
 .estreia-foto{position:relative;margin:0;border-radius:12px;overflow:hidden;aspect-ratio:8/5}
 .estreia-foto img{display:block;width:100%;height:100%;object-fit:cover}
 .estreia-foto::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(35,45,85,0) 55%,rgba(35,45,85,.55))}
-.ferramentas li.estreia .voce-aqui{position:absolute;right:14px;top:50%;transform:translateY(-50%);z-index:2;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--ouro-claro);color:var(--indigo);font-size:13px;font-weight:600;box-shadow:0 0 0 6px rgba(226,204,151,.25)}
-.ferramentas li.estreia .voce-aqui svg.i{width:16px;height:16px}
+.ferramentas li.estreia .voce-aqui{position:absolute;right:14px;top:50%;transform:translateY(-50%);z-index:2;display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:#FFFFFF;color:var(--indigo);font-size:13.5px;font-weight:700;border:2px solid var(--ouro);box-shadow:0 0 0 0 rgba(226,204,151,.7),0 8px 20px -6px rgba(0,0,0,.45);animation:pulsa 2.4s ease-out infinite}
+@keyframes pulsa{0%{box-shadow:0 0 0 0 rgba(226,204,151,.75),0 8px 20px -6px rgba(0,0,0,.45)}70%{box-shadow:0 0 0 14px rgba(226,204,151,0),0 8px 20px -6px rgba(0,0,0,.45)}100%{box-shadow:0 0 0 0 rgba(226,204,151,0),0 8px 20px -6px rgba(0,0,0,.45)}}
+@media (prefers-reduced-motion:reduce){.ferramentas li.estreia .voce-aqui{animation:none}}
+.ferramentas li.estreia .voce-aqui svg.i{width:16px;height:16px;color:var(--ouro)}
 @media (max-width:680px){.ferramentas li.estreia{grid-template-columns:1fr;padding:14px 14px 22px}.ferramentas li.estreia > div{padding:0 8px}}
 .ferramentas li.destaque .selo-icone{background:rgba(226,204,151,.18);color:var(--ouro-claro)}
 
@@ -687,7 +689,7 @@ footer b{color:var(--papel);font-weight:500}
         <li><div class="selo-icone"><svg class="i" viewBox="0 0 24 24"><use href="#i-ia"/></svg></div><div><b>Assistente de IA</b><span>Para descobrir e validar o seu caminho entre as sessões.</span></div></li>
         <li class="destaque estreia">
           <figure class="estreia-foto"><img src="img/estreia-alma-de-coruja.jpg?v=1" width="1120" height="700" loading="lazy" decoding="async" alt="Tais Joia e Leandro Garcia no estúdio do Alma de Coruja, olhando para a cadeira da convidada"><span class="voce-aqui"><svg class="i" viewBox="0 0 24 24"><use href="#i-mic"/></svg>Você aqui</span></figure>
-          <div><em class="selo-dif">Diferencial da mentoria</em><b>Sua estreia no Alma de Coruja</b><span>Ao concluir a mentoria, você pode receber o convite para o podcast Alma de Coruja. Lá, a Tais Joia te recebe no quadro dedicado aos novos terapeutas, para uma conversa sobre a sua história e o seu trabalho, já como terapeuta em atividade, diante de uma audiência que já confia na espiritualidade.</span><span class="condicao"><b>O convite não é automático.</b> Ele depende de cumprir os requisitos da mentoria, com as atividades implementadas e o trabalho já em andamento, e da minha avaliação pessoal da sua caminhada. A decisão de convidar é sempre minha.</span></div>
+          <div><em class="selo-dif">Diferencial da mentoria</em><b>Sua estreia no Alma de Coruja</b><span>Ao concluir a mentoria, você pode receber o convite para o podcast Alma de Coruja. Lá, a Tais Joia te recebe no quadro dedicado aos novos terapeutas, para uma conversa sobre a sua história e o seu trabalho, já como terapeuta em atividade, diante de uma audiência que já confia na espiritualidade.</span><span class="condicao"><b>Um convite que se conquista na caminhada.</b> Ele não é automático: acontece para quem conclui a jornada cumprindo os requisitos da mentoria, com as atividades implementadas e o trabalho já em andamento. Como acompanho cada passo de perto, juntos reconhecemos o momento certo para essa estreia.</span></div>
         </li>
       </ul>
     </div>

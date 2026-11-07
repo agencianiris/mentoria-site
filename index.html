@@ -316,6 +316,23 @@ footer{background:var(--indigo-deep);color:#AEB3D2;font-size:13px;padding-block:
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 40px}
 footer p{max-width:70ch}
 footer b{color:var(--papel);font-weight:500}
+.rodape-foto{max-width:var(--max,1100px);margin:32px auto 0;padding:28px 16px 0;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px 48px}
+.rodape-foto figure{margin:0;width:min(300px,100%);padding:10px;background:var(--papel);border:2px solid var(--ouro);box-shadow:0 0 0 6px var(--indigo-deep),0 0 0 8px var(--ouro-claro),0 18px 40px rgba(0,0,0,.35);transform:rotate(-2deg);transition:transform .4s ease}
+.rodape-foto figure:hover{transform:rotate(0) scale(1.02)}
+.rodape-foto img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.rodape-foto figcaption{font-family:var(--display);color:var(--tinta-2);font-size:14px;text-align:center;padding-top:8px}
+.rodape-lado{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.vai-timao{font-family:var(--display);font-size:clamp(30px,6vw,44px);font-weight:700;line-height:1.1;color:#fff;background:#000;padding:10px 22px;border:3px solid #fff;letter-spacing:.02em;animation:timao-pula 1.6s ease-in-out infinite}
+.vai-timao span{display:inline-block;animation:timao-onda 1.6s ease-in-out infinite}
+.vai-timao span:nth-child(2){animation-delay:.15s}
+@keyframes timao-pula{0%,100%{transform:scale(1) rotate(-1deg)}50%{transform:scale(1.06) rotate(1deg)}}
+@keyframes timao-onda{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.rodape-botoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.rodape-botoes a{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .2s ease,filter .2s ease}
+.rodape-botoes a:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-site{background:var(--ouro);color:var(--indigo-deep)}
+.btn-cel{background:var(--zap);color:#fff}
+@media (prefers-reduced-motion:reduce){.vai-timao,.vai-timao span{animation:none}}
 
 @media (max-width:960px){
   .hero-grid,.sobre-grid,.conversa-box,.prova-grid{grid-template-columns:1fr}
@@ -796,6 +813,19 @@ footer b{color:var(--papel);font-weight:500}
     <p><b>Leandro Garcia</b> · Mentor de terapeutas espiritualistas</p>
     <p>A mentoria trata de posicionamento, comunicação e estrutura do trabalho espiritualista. Não é formação terapêutica e não habilita para atendimentos de saúde.</p>
     <p style="font-size:20px;font-weight:700">Claude Franco Leal</p>
+  </div>
+  <div class="rodape-foto">
+    <figure>
+      <img src="img/rodape-foto.jpg" alt="Leandro e amigo sorrindo em uma lanchonete" loading="lazy" width="800" height="1067">
+      <figcaption>Bons encontros</figcaption>
+    </figure>
+    <div class="rodape-lado">
+      <div class="vai-timao"><span>Vai</span> <span>Corinthians!</span></div>
+      <div class="rodape-botoes">
+        <a class="btn-site" href="https://legarcia.com.br">🌐 Meu site</a>
+        <a class="btn-cel" href="tel:+5511999999999">📱 Meu celular</a>
+      </div>
+    </div>
   </div>
 </footer>
 

@@ -316,6 +316,10 @@ footer{background:var(--indigo-deep);color:#AEB3D2;font-size:13px;padding-block:
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 40px}
 footer p{max-width:70ch}
 footer b{color:var(--papel);font-weight:500}
+footer .rj{width:100%;margin:8px 0 0;display:flex;align-items:center;gap:20px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);scroll-margin-top:90px}
+footer .rj img{width:180px;height:240px;object-fit:cover;border:3px solid var(--ouro);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+footer .rj figcaption b{display:block;font-family:var(--display);font-size:22px;color:var(--ouro-claro)}
+@media (max-width:680px){footer .rj{flex-direction:column;text-align:center}footer .rj img{width:70%;max-width:260px;height:auto;aspect-ratio:3/4}}
 
 @media (max-width:960px){
   .hero-grid,.sobre-grid,.conversa-box,.prova-grid{grid-template-columns:1fr}
@@ -349,6 +353,7 @@ footer b{color:var(--papel);font-weight:500}
       <a href="#prova">A prova</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#perguntas">Perguntas</a>
+      <a href="#rodrigo-joia">Rodrigo Joia</a>
       <a class="btn btn-indigo" href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Leandro!%20Vim%20pela%20p%C3%A1gina%20da%20mentoria%20e%20quero%20entender%20se%20ela%20faz%20sentido%20para%20o%20meu%20momento." target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><use href="#i-zap"/></svg>Quero conversar</a>
     </div>
     <button class="abre-menu" id="abre-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
@@ -795,6 +800,10 @@ footer b{color:var(--papel);font-weight:500}
   <div class="wrap">
     <p><b>Leandro Garcia</b> · Mentor de terapeutas espiritualistas</p>
     <p>A mentoria trata de posicionamento, comunicação e estrutura do trabalho espiritualista. Não é formação terapêutica e não habilita para atendimentos de saúde.</p>
+    <figure class="rj" id="rodrigo-joia">
+      <img src="img/rodrigo-joia.jpg" width="675" height="900" loading="lazy" decoding="async" alt="Rodrigo Joia e Leandro Garcia">
+      <figcaption><b>Rodrigo Joia</b></figcaption>
+    </figure>
   </div>
 </footer>
 
